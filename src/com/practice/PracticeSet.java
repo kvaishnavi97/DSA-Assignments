@@ -111,10 +111,10 @@ public class PracticeSet {
     }
 
     public static void main(String[] args) {
-        // SumOfIntegers.doSum();
-        //System.out.println("Indexed element: " + FindIndexOfArray.findIndex());
-        //FindElementsLessThanGivenNo.findLessThanElements();
-        //AlternateOrder.printAlternateOrder();
+         SumOfIntegers.doSum();
+        System.out.println("Indexed element: " + FindIndexOfArray.findIndex());
+        FindElementsLessThanGivenNo.findLessThanElements();
+        AlternateOrder.printAlternateOrder();
         ValueSameAsIndex.findValueSameAsIndex();
 
     }

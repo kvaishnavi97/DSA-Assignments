@@ -75,8 +75,10 @@ public class Assignment {
 
 
     public static void main(String[] args) {
-        //Perfect.findPerfect();
+        Perfect.findPerfect();
         System.out.println(MaxMinStep.findMaxMinStep());
+        LeastTwoGreatestElements.findLeastMaxElements();
+        SumOfGivenSeries.findSum();
 
     }
 }
