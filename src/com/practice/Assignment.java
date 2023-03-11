@@ -70,7 +70,6 @@ public class Assignment {
             int sum = (n * (n + 1)) / 2;
             System.out.println("Sum:   " + sum);
         }
-
     }
 
 

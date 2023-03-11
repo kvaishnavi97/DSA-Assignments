@@ -27,7 +27,6 @@ public class PracticeSet {
     }
 
 
-
     class FindIndexOfArray {
 
         static int findIndex() {
@@ -55,11 +54,11 @@ public class PracticeSet {
             System.out.println("Enter the element: ");
             int element = sc.nextInt();
 
-            int index=findIndex(array, element);
-            if(index == -1)
+            int index = findIndex(array, element);
+            if (index == -1)
                 System.out.println("Element is not present in an array");
             else
-                System.out.println("No of elements which are less than given no "+element+" are "+(index+1));
+                System.out.println("No of elements which are less than given no " + element + " are " + (index + 1));
 
         }
 
@@ -79,43 +78,79 @@ public class PracticeSet {
         }
     }
 
-    class AlternateOrder{
-         static void printAlternateOrder(){
-             Scanner sc = getScanner();
-             System.out.println("Enter no of elements: ");
-             int n = sc.nextInt();
-             int[] array = takeArrayInput(sc, n);
-             int i=0;
-             while(i<=array.length-1){
-                 System.out.print(array[i]+" ");
-                 i=i+2;
-             }
-
-         }
-    }
-
-    class ValueSameAsIndex{
-
-        static void findValueSameAsIndex(){
+    class AlternateOrder {
+        static void printAlternateOrder() {
             Scanner sc = getScanner();
             System.out.println("Enter no of elements: ");
             int n = sc.nextInt();
             int[] array = takeArrayInput(sc, n);
-            for(int i=0;i<array.length;i++){
-                if(array[i] == i+1){
-                    System.out.print(array[i]+" ");
+            int i = 0;
+            while (i <= array.length - 1) {
+                System.out.print(array[i] + " ");
+                i = i + 2;
+            }
+
+        }
+    }
+
+    class ValueSameAsIndex {
+
+        static void findValueSameAsIndex() {
+            Scanner sc = getScanner();
+            System.out.println("Enter no of elements: ");
+            int n = sc.nextInt();
+            int[] array = takeArrayInput(sc, n);
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == i + 1) {
+                    System.out.print(array[i] + " ");
                 }
             }
 
         }
     }
 
+    class Fascinating {
+        static void find() {
+            Scanner sc = getScanner();
+            System.out.println("Enter the no");
+            int n = sc.nextInt();
+            String str = "" + n + (n * 2) + (n * 3);
+            //TODO: need improvement, find other of concatenating string by + operator
+            System.out.println(str);
+            char[] chars = str.toCharArray();
+            int digit, count = 0;
+            for (int i = 0; i < chars.length; i++) {
+                digit = checkDigit(chars[i]);
+                if (chars[i] != 48) {
+                    chars[i] = (char) digit;
+                    count++;
+                } else {
+                    break;
+                }
+            }
+            if (count == chars.length) {
+                System.out.println("No is Fascinating");
+            } else {
+                System.out.println("No is not Fascinating");
+            }
+        }
+
+        static int checkDigit(char ch) {
+            if (ch >= 49 && ch <= 57) {
+                return 0;
+            }
+            return -1;
+        }
+    }
+
+
     public static void main(String[] args) {
-         SumOfIntegers.doSum();
+        SumOfIntegers.doSum();
         System.out.println("Indexed element: " + FindIndexOfArray.findIndex());
         FindElementsLessThanGivenNo.findLessThanElements();
         AlternateOrder.printAlternateOrder();
         ValueSameAsIndex.findValueSameAsIndex();
+        Fascinating.find();
 
     }
 }
